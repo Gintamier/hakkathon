@@ -18,15 +18,30 @@ Can you design the function such that it will ask the user again if
 he doesn't input a integer?
  */
 
-int PlaceBet(int bankRoll){
-  int betValue = int.parse(stdin.readLineSync()!);
-  if(betValue < bankRoll){
-    bankRoll - betValue;
-  } else if (betValue > bankRoll){
-    print("You can't afford this bet.");
-  } else if(betValue == 0){
-    print("This ain't a free game..");
-  } 
+int PlaceBet(int bankRoll) {
+  int betValue = 0;
+  bool validInput = false;
+
+  while (!validInput) {
+    try {
+      print("Enter your bet:");
+      betValue = int.parse(stdin.readLineSync()!);
+      if (betValue > 0 && betValue <= bankRoll) {
+        validInput = true;
+      } else if (betValue > bankRoll) {
+        print("You can't afford this bet.");
+      } else {
+        print("This ain't a free game..");
+      }
+    } catch (e) {
+      print("Please enter a numeric value.");
+    }
+  }
+
+  if (betValue < bankRoll) {
+    bankRoll -= betValue;
+  }
+
   return bankRoll;
 }
 

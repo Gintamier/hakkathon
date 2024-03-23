@@ -15,13 +15,13 @@ of the user, which should have decreased/increased based on if he won or not.
 
 import 'package:BlackJack/functions/functions.dart';
 
-num checkWinner(List<int> playerHand, List<int> houseHand, int currentBankRoll, int currentBet) {
+int checkWinner(List<int> playerHand, List<int> houseHand, int currentBankRoll, int currentBet) {
   int playerScore = CalculateScore(playerHand);
   int houseScore = CalculateScore(houseHand);
 
   if (playerScore == 21 && playerHand.length == 2) {
     print("Blackjack! You win!");
-    return currentBankRoll + (currentBet * 1.5);
+    return currentBankRoll + (currentBet * 2);
   } else if (houseScore == 21 && houseHand.length == 2) {
     print("Tough luck, The house got a Blackjack!");
     return currentBankRoll - currentBet;

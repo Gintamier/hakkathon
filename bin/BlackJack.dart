@@ -10,12 +10,20 @@ void main() {
   List<int> shuffledDeck = Shuffler(deck);
   List<int> houseHand = [];
   List<int> playerHand = [];
-  int bankRoll = 2000;
+  int bankRoll = BuyIn();
+  while (bankRoll > 0) {
+  int currentBet =  PlaceBet(bankRoll);
   InitialDeal(playerHand, houseHand, shuffledDeck);
-  DrawCard(houseHand, shuffledDeck);
-
   Status(playerHand, houseHand);
-  print(CheckIfBusted(houseHand));
-  PlaceBet(bankRoll);
+  HitOrStay(playerHand, houseHand, deck);
+  if(!CheckIfBusted(playerHand)) {
+    HousePlays(houseHand, deck);
+  }
+  bankRoll = checkWinner(playerHand, houseHand, bankRoll, currentBet);
+  ReturnHands(playerHand, houseHand, deck);
+  }
+  print(houseHand);
+  //print(CheckIfBusted(houseHand));
+  HousePlays(houseHand, shuffledDeck);
 }
 

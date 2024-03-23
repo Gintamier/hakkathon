@@ -19,5 +19,12 @@ that the function will simply ask the user again to input an answer?
  */
 
 int OptionSelect(String statement, List<String> options){
-  return 0;
+  print(statement);
+  int i = 1;
+  for ( String option in options){
+    print("${i++}. $option");
+  }
+    String userInput = stdin.readLineSync()!;
+
+  return int.parse(userInput);
 }

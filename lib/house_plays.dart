@@ -18,5 +18,24 @@ show the score of the house.
  */
 
 void HousePlays(List<int> houseHand, List<int> deck){
+print(houseHand);
+while (CalculateScore(houseHand) < 17)
+{
+//Draga spil 
+// Check busted
+      print("Drawing another card...");
+      int card = DealCard(deck);
+      houseHand.add(card);
+      print(cardNamer(card));
+      //Check busted 
+      if (CalculateScore(houseHand) > 21){
+        print("House busted with the total of ${CalculateScore(houseHand)}");
+        print("You win!");
+        break;
+      } else if(CalculateScore(houseHand) <= 17) {
+       print("House has ${CalculateScore(houseHand)}");
+       break;
 
+}
+}
 }
