@@ -7,16 +7,14 @@ import 'package:BlackJack/functions/welcome.dart';
 
 void main() {
   List<int> deck = DeckOfCards();
-  // print(deck);
   List<int> shuffledDeck = Shuffler(deck);
   List<int> houseHand = [];
   List<int> playerHand = [];
   InitialDeal(playerHand, houseHand, shuffledDeck);
-  // DrawCard(playerHand, shuffledDeck);
-
-
+  DrawCard(houseHand, shuffledDeck);
 
   Status(playerHand, houseHand);
+  print(CheckIfBusted(houseHand));
 
 }
 
