@@ -12,11 +12,13 @@ void main() {
   List<int> houseHand = [];
   List<int> playerHand = [];
   InitialDeal(playerHand, houseHand, shuffledDeck);
+  DrawCard(playerHand, shuffledDeck);
 
 
-  print(houseHand);
+  // print(houseHand);
   print(playerHand);
-  print(shuffledDeck);
+  // print(shuffledDeck);
+  print(CalculateScore(playerHand));
 
 }
 

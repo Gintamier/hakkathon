@@ -25,5 +25,20 @@ gets the score 1. So if the method gets the hand [1, 1] the score would be 12
 
 
 int CalculateScore(List<int> hand){
-  return 0;
+  int aceCounter = 0;
+  int score = 0;
+  for (int card in hand){
+    if (card == 1 && aceCounter == 0){
+      aceCounter += 1;
+      score += 11;
+    }
+    else if (card == 11 || card == 12 || card == 13){
+      score += 10;
+    }
+    else if (card == 1 && aceCounter > 0){
+      score += 1;
+    } else score += card;
+  }
+  print(aceCounter);
+  return score;
 }
