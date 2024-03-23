@@ -7,7 +7,12 @@ A new deck of cards
 Shuffler
 And when run, returns a shuffled deck of cards. No inputs, only output.
  */
-
-List<int> ShuffledDeck(){
-  return[];
+void main() {
+  List<int> shuffledDeck() {
+    List<int> newDeck = DeckOfCards();
+    List<int> shuffledDeck = Shuffler(newDeck);
+    return shuffledDeck;
+  }
+  shuffledDeck();
 }
+
