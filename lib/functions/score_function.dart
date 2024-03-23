@@ -39,6 +39,5 @@ int CalculateScore(List<int> hand){
       score += 1;
     } else score += card;
   }
-  print(aceCounter);
   return score;
 }

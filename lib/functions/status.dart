@@ -15,5 +15,22 @@ hand before showdown.)
 
  */
 void Status(List<int> playerHand, List<int> houseHand){
+  List newPlayerHand = [];
+  List newHouseHand = [];
+
+  for (int card in playerHand) {
+    String newCard = cardNamer(card);
+    newPlayerHand.add(newCard);
+  }
+  for (int card in houseHand) {
+    if(houseHand.length == 2){
+      print(houseHand[1]);
+      print(CalculateScore(houseHand));
+    }
+    String newCard = cardNamer(card);
+    newHouseHand.add(newCard);
+  }
+print("Player hand: ${newPlayerHand}\nFor a total of: ${CalculateScore(playerHand)}");
+  print("Player hand: ${newHouseHand[0]}\nFor a total of: ${CalculateScore(houseHand)}");
 
 }
