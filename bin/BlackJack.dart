@@ -9,13 +9,14 @@ void main() {
   List<int> deck = DeckOfCards();
   print(deck);
   List<int> shuffledDeck = Shuffler(deck);
-  List<int> hand = [];
-  int card = DealCard(shuffledDeck);
-  DrawCard(hand, shuffledDeck);
-  DrawCard(hand, shuffledDeck);
-  DrawCard(hand, shuffledDeck);
+  List<int> houseHand = [];
+  List<int> playerHand = [];
+  InitialDeal(playerHand, houseHand, shuffledDeck);
 
+
+  print(houseHand);
+  print(playerHand);
   print(shuffledDeck);
-  print(hand);
+
 }
 
