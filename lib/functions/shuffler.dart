@@ -8,5 +8,8 @@ I.e, it should return a RANDOMIZED version of the list.
  */
 
 List<int> Shuffler(List<int> theList){
-  return [];
-}
+    List<int> shuffledList = theList;
+    shuffledList.shuffle();
+    return shuffledList;
+  }
+
