@@ -6,6 +6,6 @@ import 'package:BlackJack/functions/welcome.dart';
  */
 
 void main() {
-  print('The Knights Rule');
+  print('The Knights');
 }
 
